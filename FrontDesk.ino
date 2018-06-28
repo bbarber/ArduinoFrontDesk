@@ -1,7 +1,7 @@
 #include <Adafruit_NeoPixel.h>
 
-#define PIN1 3
-#define PIN2 4
+#define STRIP1_PIN 3
+#define STRIP2_PIN 4
 
 const int buttonPin = 2;
 int lightMode = 0;
@@ -13,8 +13,8 @@ volatile unsigned long last_micros;
 
 #define NUM_PIXELS 120
 
-Adafruit_NeoPixel strip1 = Adafruit_NeoPixel(NUM_PIXELS, PIN1, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel strip2 = Adafruit_NeoPixel(NUM_PIXELS, PIN2, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip1 = Adafruit_NeoPixel(NUM_PIXELS, STRIP1_PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip2 = Adafruit_NeoPixel(NUM_PIXELS, STRIP2_PIN, NEO_GRB + NEO_KHZ800);
 
 uint32_t DPLColor1 = strip1.Color(0, 50, 0);
 uint32_t DPLColor2 = strip2.Color(15, 15, 15);
