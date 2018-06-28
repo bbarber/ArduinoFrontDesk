@@ -35,6 +35,7 @@ void setup() {
 }
 
 void debounceInterrupt() {
+  // Todd-click prevention
   if((long)(micros() - last_micros) >= debouncing_time * 1000) {
     changeMode();
     last_micros = micros();
@@ -42,8 +43,6 @@ void debounceInterrupt() {
 }
 
 void changeMode() {
-  // Note - this is not debounced so you might
-  // get extra button presses registered
   lightMode = (lightMode + 1) % numModes;
   interrupted = 1;
 }
